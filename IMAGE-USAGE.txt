@@ -1,0 +1,93 @@
+================================================================================
+BELOBSTERGUIN WEBSITE - IMAGE USAGE GUIDE
+================================================================================
+Last Updated: May 3, 2026
+
+IMAGE FOLDER STRUCTURE:
+-----------------------
+/images/
+  ├── belobsterguin.jpg     - Modern type specimen (color photo)
+  ├── earliestbelob.png     - Historical first photograph (B&W, circa 1900s)
+  ├── navimage.png          - Navigation sidebar thumbnail (all pages)
+  └── background.png        - Full-page background image
+
+CURRENT IMAGES:
+---------------
+1. images/belobsterguin.jpg - Modern type specimen (color photo)
+2. images/earliestbelob.png - Historical first photograph (black & white, circa 1900s)
+3. images/navimage.png      - Navigation sidebar thumbnail (appears on all pages)
+4. images/background.png    - Full-page background (covers entire viewport)
+
+NAVIGATION SIDEBAR:
+-------------------
+- All pages use navimage.png in the sidebar navigation
+- Consistent 150px width with border
+- Labeled as "Adult specimen"
+
+BACKGROUND IMAGE:
+-----------------
+- Applied to all pages via CSS (body background-image)
+- Settings: cover, fixed attachment, centered
+- Creates immersive underwater/Arctic atmosphere
+
+USAGE STRATEGY:
+---------------
+Each image is used ONCE in main page content to avoid redundancy.
+Sidebar thumbnails appear on all pages for navigation consistency.
+
+CURRENT ASSIGNMENTS:
+--------------------
+INDEX.HTML (Homepage):
+  - Earliest photo only (circa 1900s)
+  - Historical context and discovery narrative
+  - Single focused image, not cluttered
+
+GALLERY.HTML:
+  - PRIMARY repository for ALL photos
+  - Side-by-side "Then and Now" comparison layout
+  - Both images with detailed captions and historical context
+  - Uses comparison arrows to show 100+ year progression
+
+MORPHOLOGY.HTML:
+  - Modern type specimen (moved from homepage)
+  - Best view for showing anatomical features
+  - Annotated list of visible morphological characteristics
+
+HABITAT.HTML:
+  - [PLACEHOLDER] Behavioral study photos needed
+  - Future: ice excavation, foraging, social interaction sequences
+
+RESEARCH.HTML:
+  - Text reference to historical photo with link to gallery
+  - No embedded images (content-focused)
+
+CONTACT.HTML:
+  - [PLACEHOLDER] Research station location/facility photos
+  - Future: field station images
+
+NEEDED IMAGES (Priority Order):
+--------------------------------
+HIGH PRIORITY:
+1. Anatomical diagram (morphology page)
+2. Behavioral sequence photos (habitat page)
+3. Multiple angle shots of claws/chelipeds
+4. Pod/group social behavior
+
+MEDIUM PRIORITY:
+5. Research station location/facilities
+6. Ice-breaking behavior close-ups
+7. Underwater photography
+8. Size comparison diagrams
+
+LOW PRIORITY:
+9. Range maps
+10. Fossil evidence (if any)
+
+NOTES:
+------
+- Gallery page = single source of truth for all images
+- Other pages link to gallery rather than duplicating photos
+- Placeholders indicate what type of content belongs on each page
+- All sidebar navigation thumbnails use belobsterguin.jpg consistently
+
+================================================================================

@@ -1,0 +1,153 @@
+/* Classic Early Internet Stylesheet */
+
+body {
+    background-image: url('images/background.png');
+    background-color: #FFFFFF;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    font-family: "Times New Roman", Times, serif;
+    margin: 0;
+    padding: 12px;
+    box-sizing: border-box;
+    height: 100vh;
+    overflow: hidden;
+    color: #000000;
+}
+
+.site-center {
+    display: block;
+    margin: 0;
+}
+
+.site-shell {
+    width: min(800px, 100%);
+    margin: 0 auto;
+    border: 2px solid #000080;
+    border-collapse: collapse;
+    background: #FFFFFF;
+    text-align: left;
+}
+
+.site-header-row {
+    background: #000080;
+}
+
+.site-header-cell {
+    padding: 10px;
+}
+
+.site-nav {
+    width: 200px;
+    background: #E0E0E0;
+    vertical-align: top;
+    padding: 10px;
+}
+
+.site-main {
+    vertical-align: top;
+    padding: 10px;
+}
+
+.site-footer-row {
+    background: #000080;
+}
+
+.site-footer-cell {
+    text-align: center;
+    padding: 10px;
+}
+
+.nav-specimen-image {
+    width: 150px;
+    border: 2px solid #000000;
+}
+
+a:link {
+    color: #0000FF;
+    text-decoration: underline;
+}
+
+a:visited {
+    color: #800080;
+}
+
+a:hover {
+    color: #FF0000;
+    background-color: #FFFF00;
+}
+
+h1, h2, h3 {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #000080;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+hr {
+    border: 0;
+    height: 2px;
+    background-color: #000080;
+}
+
+.blink-text {
+    animation: blink-animation 1s steps(2, start) infinite;
+}
+
+@keyframes blink-animation {
+    to {
+        visibility: hidden;
+    }
+}
+
+.warning {
+    color: #FF0000;
+    font-weight: bold;
+}
+
+.highlight {
+    background-color: #FFFF00;
+}
+
+.page-content {
+    display: none;
+}
+
+.page-content.is-active {
+    display: block;
+}
+
+.nav-link[aria-current="page"] {
+    font-weight: bold;
+    background-color: #FFFF99;
+}
+
+#newsletter-message {
+    font-size: 14px;
+    margin: 8px 0 0;
+    min-height: 1em;
+}
+
+#newsletter-message.success {
+    color: #006600;
+    font-weight: bold;
+}
+
+#newsletter-message.error {
+    color: #AA0000;
+    font-weight: bold;
+}
+
+@media (max-width: 900px) {
+    body {
+        padding: 6px;
+        background-attachment: scroll;
+    }
+
+    .site-nav {
+        width: 180px;
+    }
+}
