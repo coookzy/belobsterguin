@@ -64,6 +64,17 @@ body {
     border: 2px solid #000000;
 }
 
+.agent-status-link {
+    text-decoration: none;
+    display: inline-block;
+    transition: transform 0.2s ease;
+}
+
+.agent-status-link:hover {
+    transform: scale(1.05);
+    background: none;
+}
+
 .agent-status {
     display: inline-flex;
     align-items: center;
@@ -73,6 +84,12 @@ body {
     border: 2px solid #00FF00;
     border-radius: 4px;
     font-family: "Courier New", Courier, monospace;
+    cursor: pointer;
+    transition: box-shadow 0.2s ease;
+}
+
+.agent-status-link:hover .agent-status {
+    box-shadow: 0 0 12px #00FF00;
 }
 
 .status-indicator {
