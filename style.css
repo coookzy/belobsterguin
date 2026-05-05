@@ -125,6 +125,59 @@ hr {
     background-color: #FFFF99;
 }
 
+/* Agent Status Indicator */
+.agent-status {
+    margin-top: 12px;
+    padding: 8px;
+    background-color: #D4D0C8;
+    border: 2px solid #808080;
+    border-top-color: #FFFFFF;
+    border-left-color: #FFFFFF;
+    text-align: center;
+}
+
+.agent-status-indicator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    margin-bottom: 6px;
+}
+
+.status-dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: #00FF00;
+    border-radius: 50%;
+    border: 1px solid #008000;
+    animation: pulse-glow 2s ease-in-out infinite;
+    box-shadow: 0 0 4px #00FF00;
+}
+
+.status-text {
+    font-family: "Courier New", Courier, monospace;
+    font-size: 11px;
+    color: #000080;
+    letter-spacing: 0.5px;
+}
+
+.agent-info {
+    color: #666666;
+    line-height: 1.3;
+}
+
+@keyframes pulse-glow {
+    0%, 100% {
+        opacity: 1;
+        box-shadow: 0 0 4px #00FF00;
+    }
+    50% {
+        opacity: 0.6;
+        box-shadow: 0 0 8px #00FF00, 0 0 12px #00FF00;
+    }
+}
+
 #newsletter-message {
     font-size: 14px;
     margin: 8px 0 0;
