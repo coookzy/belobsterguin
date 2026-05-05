@@ -42,19 +42,14 @@
                 if (e.state && e.state.page) {
                     this.showPage(e.state.page, false);
                 } else {
-                    this.showPage(this.normalizePageFromHash(), false);
+                    this.showPage(this.normalizePageFromPath(), false);
                 }
-            });
-
-            // Handle manual hash changes
-            window.addEventListener('hashchange', () => {
-                this.showPage(this.normalizePageFromHash(), false);
             });
         },
 
         loadInitialPage: function() {
-            const page = this.normalizePageFromHash();
-            this.showPage(page, true);
+            const page = this.normalizePageFromPath();
+            this.showPage(page, false);
         },
 
         navigateTo: function(page) {
@@ -82,11 +77,12 @@
                 this.updateAddressBar(normalizedPage);
 
                 // Update browser history
-                if (addToHistory && window.location.hash.slice(1) !== normalizedPage) {
+                const cleanPath = normalizedPage === 'index.html' ? '/' : '/' + normalizedPage.replace('.html', '');
+                if (addToHistory) {
                     window.history.pushState(
                         { page: normalizedPage }, 
                         '', 
-                        '#' + normalizedPage
+                        cleanPath
                     );
                 }
 
@@ -113,9 +109,18 @@
             return this.validPages.has(this.normalizePage(href));
         },
 
-        normalizePageFromHash: function() {
-            const hashPage = window.location.hash.slice(1);
-            return this.normalizePage(hashPage || 'index.html');
+        normalizePageFromPath: function() {
+            const path = window.location.pathname;
+            const pathParts = path.split('/').filter(p => p);
+            const lastPart = pathParts[pathParts.length - 1] || '';
+            
+            if (!lastPart || lastPart === 'index.html') {
+                return 'index.html';
+            }
+            
+            // Add .html if not present
+            const normalized = lastPart.includes('.html') ? lastPart : lastPart + '.html';
+            return this.normalizePage(normalized);
         },
 
         normalizePage: function(page) {
@@ -141,7 +146,8 @@
         updateAddressBar: function(page) {
             const addressInput = document.querySelector('.address-input');
             if (addressInput) {
-                addressInput.value = 'https://belobsterguin.fun/' + page;
+                const cleanPath = page === 'index.html' ? '' : page.replace('.html', '');
+                addressInput.value = 'https://belobsterguin.fun/' + cleanPath;
             }
         }
     };

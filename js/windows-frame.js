@@ -79,10 +79,11 @@
             const addressBar = document.createElement('div');
             addressBar.className = 'windows95-addressbar';
             const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+            const cleanPath = currentPage === 'index.html' ? '' : currentPage.replace('.html', '');
             addressBar.innerHTML = `
                 <span class="address-label">Address</span>
                 <div class="address-input-wrapper">
-                    <input type="text" class="address-input" value="https://belobsterguin.fun/${currentPage}" readonly>
+                    <input type="text" class="address-input" value="https://belobsterguin.fun/${cleanPath}" readonly>
                 </div>
                 <button class="go-btn" disabled>Go</button>
             `;
