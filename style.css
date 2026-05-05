@@ -64,6 +64,44 @@ body {
     border: 2px solid #000000;
 }
 
+.agent-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 10px;
+    background: #000000;
+    border: 2px solid #00FF00;
+    border-radius: 4px;
+    font-family: "Courier New", Courier, monospace;
+}
+
+.status-indicator {
+    width: 8px;
+    height: 8px;
+    background: #00FF00;
+    border-radius: 50%;
+    animation: pulse-glow 2s ease-in-out infinite;
+    box-shadow: 0 0 4px #00FF00;
+}
+
+.status-text {
+    color: #00FF00;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+@keyframes pulse-glow {
+    0%, 100% {
+        opacity: 1;
+        box-shadow: 0 0 4px #00FF00;
+    }
+    50% {
+        opacity: 0.6;
+        box-shadow: 0 0 8px #00FF00, 0 0 12px #00FF00;
+    }
+}
+
 a:link {
     color: #0000FF;
     text-decoration: underline;
@@ -95,54 +133,6 @@ hr {
 
 .blink-text {
     animation: blink-animation 1s steps(2, start) infinite;
-}
-
-/* Agent Status Indicator */
-.header-content {
-    position: relative;
-}
-
-.agent-status {
-    position: absolute;
-    top: 5px;
-    right: 10px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    background: rgba(0, 0, 0, 0.3);
-    padding: 6px 12px;
-    border-radius: 3px;
-    border: 1px solid #00FF00;
-    box-shadow: 0 0 8px rgba(0, 255, 0, 0.3);
-    font-family: 'Courier New', monospace;
-    font-size: 11px;
-    color: #00FF00;
-    font-weight: bold;
-    letter-spacing: 0.5px;
-}
-
-.status-indicator {
-    width: 10px;
-    height: 10px;
-    background: #00FF00;
-    border-radius: 50%;
-    box-shadow: 0 0 6px #00FF00, inset 0 0 3px rgba(255, 255, 255, 0.5);
-    animation: pulse-glow 2s ease-in-out infinite;
-}
-
-.status-text {
-    text-shadow: 0 0 4px rgba(0, 255, 0, 0.8);
-}
-
-@keyframes pulse-glow {
-    0%, 100% {
-        opacity: 1;
-        box-shadow: 0 0 6px #00FF00, inset 0 0 3px rgba(255, 255, 255, 0.5);
-    }
-    50% {
-        opacity: 0.6;
-        box-shadow: 0 0 12px #00FF00, inset 0 0 3px rgba(255, 255, 255, 0.3);
-    }
 }
 
 @keyframes blink-animation {
